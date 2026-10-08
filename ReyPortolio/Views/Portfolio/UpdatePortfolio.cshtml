@@ -1,0 +1,57 @@
+﻿@model Portfolio
+@{
+	ViewData["Title"] = "Proje Güncelle";
+	Layout = "~/Views/Layout/Index.cshtml";
+}
+
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Portfolyo</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Proje Güncelleme Sayfası</div>
+					</div>
+					<div class="card-body">
+
+						<form method="post" enctype="multipart/form-data">
+							<input type="hidden" asp-for="PortfolioId" />
+							<label>Proje Adı</label>
+							<input type="text" asp-for="Title" class="form-control" />
+							<br />
+							<label>Kategori</label>
+							<input type="text" asp-for="Subtitle" class="form-control" />
+							<br />
+							<label>Görsel Yükle</label>
+							<input type="file" name="imageFile" accept="image/*" class="form-control" />
+							<small class="form-text text-muted">Bilgisayarından bir görsel seç. Seçmezsen aşağıdaki linki kullanılır.</small>
+							<br />
+							<label>Görsel Yolu</label>
+							<input type="url" asp-for="ImageUrl" class="form-control" />
+							<img src="@Model.ImageUrl" width="150" class="mt-2" />
+							<br />
+							<label>Proje Linki</label>
+							<input type="text" asp-for="Url" class="form-control" />
+							<br />
+							<label>Açıklama</label>
+							<textarea asp-for="Description" rows="4" class="form-control"></textarea>
+							<br />
+							<button class="btn btn-primary">Projeyi Kaydet</button>
+						</form>
+
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+	</div>
+</div>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}

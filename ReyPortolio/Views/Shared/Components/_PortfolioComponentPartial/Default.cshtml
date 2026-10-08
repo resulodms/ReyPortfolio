@@ -1,0 +1,52 @@
+﻿@model List<ReyPortfolio.DAL.Entities.Portfolio>
+
+<section id="works" class="s-works target-section">
+
+    <div class="row narrow section-intro has-bottom-sep">
+        <div class="col-full">
+            <h3>Portfolyo</h3>
+            <h1>Son Projelerim...</h1>
+
+            <p class="lead">Geliştirdiğim projelerden bazıları. Detaylar için görsellere, kodlar için bağlantı ikonuna tıklayabilirsiniz.</p>
+        </div>
+    </div>
+
+    <div class="row masonry-wrap">
+        <div class="masonry">
+            @foreach (var x in Model)
+            {
+                <div class="masonry__brick">
+                    <div class="item-folio">
+
+                    <div class="item-folio__thumb">
+                        <a href="@x.ImageUrl" class="thumb-link" title="@x.Title" data-size="1050x700">
+                            <img src="@x.ImageUrl"
+                                 alt="@x.Title">
+                            <span class="shadow-overlay"></span>
+                        </a>
+                    </div>
+
+                    <div class="item-folio__text">
+                        <h3 class="item-folio__title">
+                            @x.Title
+                        </h3>
+                        <p class="item-folio__cat">
+                            @x.Subtitle
+                        </p>
+                    </div>
+
+                    <a href="@x.Url" class="item-folio__project-link" title="Projeye Git" target="_blank">
+                        <i class="im im-link"></i>
+                    </a>
+
+                    <div class="item-folio__caption">
+                        <p>@x.Description</p>
+                    </div>
+
+                </div> <!-- end item-folio -->
+            </div> <!-- end masonry__brick -->
+            }
+        </div>
+    </div> <!-- end masonry -->
+
+</section> 

@@ -1,0 +1,17 @@
+﻿@model List<ReyPortfolio.DAL.Entities.Skill>
+
+<div class="col-six tab-full right">
+    <h3>Programlama Dilleri & Becerilerim</h3>
+
+    <ul class="skill-bars">
+        @foreach (var x in Model)
+        {
+            <li>
+                <div class="progress percent@(x.Value) "><span>@x.Value%</span></div>
+                <strong>@x.Title</strong>
+            </li>
+         
+        
+        }
+    </ul>
+</div>

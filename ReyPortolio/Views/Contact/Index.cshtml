@@ -1,0 +1,56 @@
+﻿@model Contact
+@{
+	ViewData["Title"] = "Title";
+	Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">İletişim</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">İletişim Alanı Güncelleme Sayfası</div>
+					</div>
+					<div class="card-body">
+						@if (TempData["Mesaj"] != null)
+						{
+							<div class="alert alert-success">@TempData["Mesaj"]</div>
+						}
+						<form method="post">
+							<input type="hidden" asp-for="ContactId" />
+							<label>Başlık</label>
+							<input type="text" asp-for="Title" class="form-control" />
+							<br />
+
+							<label>Kısa Açıklama</label>
+							<textarea asp-for="Description" rows="3" class="form-control"></textarea>
+							<br />
+							<label>Telefon 1</label>
+							<input type="tel" asp-for="Phone1" class="form-control" />
+							<br />
+							<label>Telefon 2</label>
+							<input type="tel" asp-for="Phone2"  class="form-control" />
+							<br />
+							<label>Email 1</label>
+							<input type="email" asp-for="Email1" class="form-control" />
+							<br />
+							<label>Email 2</label>
+							<input type="email" asp-for="Email2" class="form-control" />
+							<br />
+							<label>Telefon 2</label>
+							<textarea  asp-for="Address" rows="3" class="form-control" ></textarea>
+							<br />
+							<button class="btn btn-warning">Bilgileri Güncelle</button>
+						</form>
+
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+	</div>
+</div>

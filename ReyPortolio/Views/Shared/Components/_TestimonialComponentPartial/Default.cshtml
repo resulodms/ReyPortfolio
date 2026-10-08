@@ -1,0 +1,34 @@
+﻿@model List<ReyPortfolio.DAL.Entities.Testimonial>
+<div id="testimonials" class="s-testimonials target-section">
+
+    <div class="overlay"></div>
+
+    <div class="row testimonials-header">
+        <div class="col-full">
+            <h1 class="h02">Hakkımda Ne Dediler</h1>
+        </div>
+    </div>
+
+    <div class="row testimonials">
+
+        <div class="col-full testimonials__slider">
+            @foreach (var x in Model)
+            {
+                <div class="testimonials__slide">
+                    <img src="@x.ImageUrl" alt="@x.NameSurname" class="testimonials__avatar">
+                <p>
+                    @x.Description
+                </p>
+                <div class="testimonials__author h06">
+                    @x.NameSurname
+                    <span>@x.Title</span>
+                </div>
+            </div>
+            }
+            
+
+        </div> <!-- end testimonials__slider -->
+
+    </div> <!-- end testimonials -->
+
+</div> 

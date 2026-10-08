@@ -1,0 +1,79 @@
+﻿@model Contact
+<section id="contact" class="s-contact target-section">
+
+    <div class="overlay"></div>
+
+    <div class="row narrow section-intro">
+        <div class="col-full">
+            <h3>İletişim</h3>
+            <h1>@Model?.Title</h1>
+
+            <p class="lead">@Model?.Description</p>
+        </div>
+    </div>
+
+    <div class="row contact__main">
+        <div class="col-eight tab-full contact__form">
+            <form name="contactForm" id="contactForm" method="post" action="">
+                <fieldset>
+
+                    <div class="form-field">
+                        <input name="NameSurname" type="text" id="contactName" placeholder="Adınız Soyadınız" value="" minlength="2" required="" aria-required="true" data-msg-required="Lütfen adınızı ve soyadınızı girin." data-msg-minlength="En az 2 karakter girmelisiniz." class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="Email" type="email" id="contactEmail" placeholder="E-posta Adresiniz" value="" required="" aria-required="true" data-msg-required="Lütfen e-posta adresinizi girin." data-msg-email="Lütfen geçerli bir e-posta adresi girin." class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="Subject" type="text" id="contactSubject" placeholder="Konu" value="" required="" aria-required="true" data-msg-required="Lütfen bir konu girin." class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <textarea name="MessageDetail" id="contactMessage" placeholder="Mesajınız" rows="10" cols="50" required="" aria-required="true" data-msg-required="Lütfen mesajınızı yazın." class="full-width"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <button class="full-width btn--primary">Gönder</button>
+                        <div class="submit-loader">
+                            <div class="text-loader">Gönderiliyor...</div>
+                            <div class="s-loader">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+
+            <!-- contact-warning -->
+            <div class="message-warning">
+                Bir hata oluştu. Lütfen tekrar deneyin.
+            </div>
+
+            <!-- contact-success -->
+            <div class="message-success">
+                Mesaj iletildi, Teşekkürler<br>
+            </div>
+
+        </div>
+        <div class="col-four tab-full contact__infos">
+            <h4 class="h06">Telefon</h4>
+            <p>
+               Telefon 1:  <a href="tel:@(Model?.Phone1?.Replace(" ", ""))">@Model?.Phone1</a><br>
+               Telefon 2: <a href="tel:@(Model?.Phone2?.Replace(" ", ""))">@Model?.Phone2</a>
+            </p>
+
+            <h4 class="h06">E-posta</h4>
+            <p>
+               E-posta 1:<a href="mailto:@Model?.Email1">@Model?.Email1</a>
+               E-posta 2: <a href="mailto:@Model?.Email2">@Model?.Email2</a>
+            </p>
+
+            <h4 class="h06">Adres</h4>
+            <p style="white-space:pre-line">
+               @Model?.Address
+            </p>
+        </div>
+
+    </div>
+
+</section> 

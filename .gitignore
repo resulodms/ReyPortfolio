@@ -1,0 +1,45 @@
+## Visual Studio / .NET icin repoya gonderilmeyecek dosyalar
+
+# Visual Studio ayar klasoru
+.vs/
+
+# Derleme ciktilari
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ll]og/
+[Ll]ogs/
+
+# Kullaniciya ozel dosyalar
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
+
+# Test sonuclari
+[Tt]est[Rr]esult*/
+*.trx
+*.coverage
+
+# Gecici ve onbellek dosyalari
+*.tmp
+*.cache
+*.log
+_ReSharper*/
+.idea/
+node_modules/
+
+# Isletim sistemi dosyalari
+Thumbs.db
+Desktop.ini
+.DS_Store

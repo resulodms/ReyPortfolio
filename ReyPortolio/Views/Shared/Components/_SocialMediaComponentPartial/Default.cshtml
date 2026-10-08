@@ -1,0 +1,14 @@
+﻿@model List<ReyPortfolio.DAL.Entities.SocialMedia>
+
+@foreach (var x in Model)
+{
+    
+        <li>
+            <a href="@x.Url" target="_blank">
+                <i class="@x.Icon" aria-hidden="true"></i>
+                <span>@x.Title</span>
+            </a>
+        </li>
+        
+    
+}

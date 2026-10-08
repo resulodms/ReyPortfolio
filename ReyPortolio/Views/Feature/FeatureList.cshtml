@@ -1,0 +1,55 @@
+﻿@model List<Feature>
+@{
+	ViewData["Title"] = "FeatureList";
+	Layout = "~/Views/Layout/Index.cshtml";
+}
+
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Öne Çıkan Alanlar</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Öne Çık</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							Yetenek ile ilgili işlemleri aşşağıdan yapabilirsiniz. Sadece 1 adet gösterilir!!!
+						</div>
+						<table class="table mt-3">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Üst Başlık</th>
+									<th scope="col">Ana Başlık</th>
+									<th scope="col">Sil</th>
+									<th scope="col">Güncelle</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var x in Model)
+								{
+									<tr>
+										<td>@x.FeatureId</td>
+										<td>@x.Title</td>
+										<td>@x.Description</td>
+										<td><a href="/Feature/DeleteFeature/@x.FeatureId" class="btn btn-danger" onclick="return confirm('Bu kaydı silmek istediğinize emin misiniz?');">Sil</a></td>
+										<td><a href="/Feature/UpdateFeature/@x.FeatureId" class="btn btn-success">Güncelle</a></td>
+									</tr>
+								}
+							</tbody>
+						</table>
+						<a href="/Feature/CreateFeature/" class="btn btn-primary">Yeni Kayıt Girişi</a>
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+	</div>
+</div>
+

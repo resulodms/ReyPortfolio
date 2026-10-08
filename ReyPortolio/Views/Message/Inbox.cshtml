@@ -1,0 +1,66 @@
+﻿@model List<Message>
+@{
+    ViewData["Title"] = "Inbox";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Mesajlar</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Mesaj Listesi</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							Mesajlar ile ilgili işlemleri aşşağıdan yapabilirsiniz.
+						</div>
+						<table class="table mt-3">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Gönderen</th>
+									<th scope="col">Konu</th>
+									<th scope="col">Tarih</th>
+									<th scope="col">Mesajı Aç</th>
+									<th scope="col">Durum</th>
+									<th scope="col">Sil</th>
+									
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var x in Model)
+								{
+									<tr class="@(x.IsRead ? "" : "font-weight-bold")">
+										<td>@x.MessageId</td>
+										<td>@x.NameSurname</td>
+										<td>@x.Subject</td>
+										<td>@x.SendDate.ToString("dd.MM.yyyy HH:mm")</td>
+										<td><a href="/Message/MessageDetail/@x.MessageId" class="btn btn-warning">Mesajı Aç</a></td>
+										@if(x.IsRead ==true)
+										{
+											<td><a href="/Message/ChangeIsReadFalse/@x.MessageId" class="btn btn-dark">Okundu </a></td>
+										}
+										else
+										{
+											<td><a href="/Message/ChangeIsReadTrue/@x.MessageId" class="btn btn-info">Okunmadı</a></td>
+										}
+										<td><a href="/Message/DeleteMessage/@x.MessageId" class="btn btn-danger" onclick="return confirm('Bu kaydı silmek istediğinize emin misiniz?');">Sil</a></td>
+										
+									</tr>
+								}
+							</tbody>
+						</table>
+					
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+	</div>
+</div>
+

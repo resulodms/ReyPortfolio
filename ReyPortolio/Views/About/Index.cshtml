@@ -1,0 +1,50 @@
+﻿@model About
+@{
+	ViewData["Title"] = "Hakkımda";
+	Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Hakkımda</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Hakkımda Alanı Güncelleme Sayfası</div>
+					</div>
+					<div class="card-body">
+						@if (TempData["Mesaj"] != null)
+						{
+							<div class="alert alert-success">@TempData["Mesaj"]</div>
+						}
+						<form method="post" enctype="multipart/form-data">
+							<input type="hidden" asp-for="AboutId" />
+							<label>Başlık</label>
+							<input type="text" asp-for="Title" class="form-control" />
+							<br />
+
+							<label>Kısa Açıklama</label>
+							<textarea asp-for="SubDescription" class="form-control" ></textarea>
+							<br />
+							<label>Ben Kimim?</label>
+							<textarea asp-for="Details" rows="8"  class="form-control" ></textarea>
+							<br />
+							<label>CV Yükle (PDF)</label>
+							<input type="file" name="cvFile" accept=".pdf" class="form-control" />
+							<small class="form-text text-muted">Yeni bir PDF seçersen mevcut CV'nin yerine geçer. Değiştirmek istemiyorsan boş bırak.</small>
+							<br />
+
+
+							<button class="btn btn-warning">Bilgileri Güncelle</button>
+						</form>
+
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+	</div>
+</div>

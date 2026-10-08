@@ -1,0 +1,53 @@
+﻿@model List<ReyPortfolio.DAL.Entities.Experience>
+
+@{
+    var half = (Model.Count + 1) / 2;
+    var leftItems = Model.Take(half).ToList();
+    var rightItems = Model.Skip(half).ToList();
+}
+
+<div class="row about-content about-content--timeline">
+
+    <div class="col-full text-center">
+        <h3>İş ve Proje Deneyimlerim</h3>
+    </div>
+
+    <div class="col-six tab-full left">
+        <div class="timeline">
+            @foreach (var x in leftItems)
+            {
+                <div class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <p class="timeline__timeframe">@x.Date</p>
+                        <h3>@x.Head</h3>
+                        <h5>@x.Title</h5>
+                    </div>
+                    <div class="timeline__desc">
+                        <p>@x.Description</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="col-six tab-full right">
+        <div class="timeline">
+            @foreach (var x in rightItems)
+            {
+                <div class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <p class="timeline__timeframe">@x.Date</p>
+                        <h3>@x.Head</h3>
+                        <h5>@x.Title</h5>
+                    </div>
+                    <div class="timeline__desc">
+                        <p>@x.Description</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>
