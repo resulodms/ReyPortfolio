@@ -381,3 +381,4 @@ Kullanılan temalar: **Hola** (StyleShout) ve **Ready Bootstrap Dashboard** (The
   <b>⭐ Bu projeyi yararlı bulduysanız star vermeyi unutmayın! ⭐</b><br>
   Resul Ödemiş tarafından ASP.NET Core & SQL Server ile geliştirildi.
 </p>
+
